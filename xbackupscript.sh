@@ -6,7 +6,7 @@ date +'%Y-%m-%d %H:%M' |
 	read date_backup hm
 echo $hm |
 	IFS=: read heure_backup x
-s3cmd sync $largedisk/archive/ s3://jmahe --server-side-encryption &>> /home/josselin/backupscript_logs/$date_backup-$hm.log
+s3cmd sync $largedisk/archive/ s3://jmahe --server-side-encryption &>> ~/backupscript_logs/$date_backup-$hm.log
 
 who -r |
 	read x x x date_boot hm
