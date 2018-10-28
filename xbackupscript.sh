@@ -1,7 +1,5 @@
 #!/bin/bash
-source /home/josselin/.bashrc
-
-set -x
+source ~/.bashrc
 
 shopt -s lastpipe
 date +'%Y-%m-%d %H:%M' |
@@ -15,9 +13,9 @@ who -r |
 echo $hm |
 	IFS=: read heure_boot x
 
-if [[ $date_boot = $date_backup && $heure_boot = 4 && $heure_backup = 4 ]] ;then
+if [[ $date_boot = $date_backup && $heure_boot = 04 && $heure_backup = 04 ]] ;then
 	echo "Arret systeme" >&2
-	echo shutdown
+	shutdown
 else
-	echo "Lancement manuel: pas d'arret systeme"
+	echo "Lancement manuel: pas d'arret systeme" >&2
 fi
